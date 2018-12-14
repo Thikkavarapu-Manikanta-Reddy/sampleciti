@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+            <a routerLink="">Maintain Bussiness Users</a><br><br>
+            <a routerLink="abu">Associate Bussiness Users</a><br>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+<form novalidate [formGroup]="myForm" (ngSubmit)="modit()">
+<label  for="firstname" >Business User First Name :</label>
+<input type="text"  formControlName="firstname" placeholder="First Name" required><br>
+
+<label  for="lastname" >Business User Last Name :</label>
+<input type="text"   formControlName="lastname" placeholder="Last Name" required><br>
+
+
+<label  for="id" >Business User ID :</label>
+
+<input type="text"   formControlName="id" placeholder="ID" required><br>
+
+<label for="Mail" >Email Address :</label>
+<input type="email"  formControlName="email" placeholder="Email Address" email required><br>
+
+
+<label  for="role">Business User Role:</label>
+
+      <select formControlName="opti123" >
+        <option>Maker</option>
+        <option>Checker</option>
+      </select><br>
+      <label for="dunit">Associate Business Unit :</label><br>
+      <textarea id="fasak" formControlName="abu"  required ></textarea ><br>
+  <input type="text" placeholder="Business Unit" required>&nbsp;
+  
+
+  <button type="button"  class="btn btn-default">Search Business Unit</button><br>
+
+  <label for="unit">Business Unit</label>
+ <div class="ex3">
+    <a (click)="modify('PSCL')">PSCL</a><br>
+    <a (click)="modify('26BU')">26BU</a><br>
+    <a (click)="modify('30BU')">30BU</a><br>
+    <a (click)="modify('GUNTUR123')">GUNTUR123</a><br>
+    <a (click)="modify('SWETHA')">SWETHA</a><br>
+  </div>
+  <label for="dunit">Default Business Unit :</label>
+  <input type="text"  formControlName="dbu"  required><br>
+  <button type="button" (click)="adding1()">Add</button><button type="button"
+   (click)="remove1()">Remove</button><br>
+
+  <label for="unit">Business User Access Rights</label>
+ <div class="ex3">
+    <a (click)="modify1('UserAdmin')">UserAdmin</a><br>
+    <a (click)="modify1('RulesetAdmin')">RulesetAdmin</a><br>
+    <a (click)="modify1('SideAdmin')">SideAdmin</a><br>
+    <a (click)="modify1('GUIAcess')">GUIAcess</a><br>
+    <a (click)="modify1('GUIDeny')">GUIDeny</a><br>
+  </div><br>
+  <p>Selected Business User Access Rights :{{access}}</p>
+ 
+  <br><br>
+          
+      <button type="submit" *ngIf="myForm.valid">save</button>&nbsp;
+        <button type="button" (click)="goback()" >cancel</button>     
+ </form>
+ </div>
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>
+ </div>
+ </div>
